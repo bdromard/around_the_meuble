@@ -46,8 +46,8 @@ const comparePassword = async (password, hashPassword) =>
     })
     
     .catch((err) => {
-      res.status(500).send({
-        message: err.message || "Une erreur a été detectée",
+      res.status(409).send({
+        message: err.message || "L'email utilisé est déjà enregistré",
       });
     });
   })
